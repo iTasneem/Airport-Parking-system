@@ -1,0 +1,12 @@
+
+State Machine - |Top|airplane:airpl|NextState
+Name NextState.flight NextState.park NextState.leave 
+NextState.leave 0 0 0 
+NextState.park 0 1 1 
+NextState.flight 1 0 1 
+
+State Machine - |Top|airplane:airpl|PrState
+Name PrState.leave PrState.park PrState.flight 
+PrState.flight 0 0 0 
+PrState.park 0 1 1 
+PrState.leave 1 0 1 

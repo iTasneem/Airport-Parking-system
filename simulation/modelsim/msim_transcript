@@ -1,0 +1,141 @@
+# Reading pref.tcl
+# do Top_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {E:/work space/airplane/Top.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:24:10 on Jan 11,2022
+# vcom -reportprogress 300 -93 -work work E:/work space/airplane/Top.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Top
+# -- Compiling architecture Behavioral of Top
+# End time: 21:24:10 on Jan 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {E:/work space/airplane/Timer.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:24:10 on Jan 11,2022
+# vcom -reportprogress 300 -93 -work work E:/work space/airplane/Timer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Timer
+# -- Compiling architecture rtl of Timer
+# End time: 21:24:10 on Jan 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {E:/work space/airplane/airportE.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:24:10 on Jan 11,2022
+# vcom -reportprogress 300 -93 -work work E:/work space/airplane/airportE.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity airportE
+# -- Compiling architecture Behav of airportE
+# End time: 21:24:11 on Jan 11,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {E:/work space/airplane/airplaneParking.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:24:11 on Jan 11,2022
+# vcom -reportprogress 300 -93 -work work E:/work space/airplane/airplaneParking.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity airplaneParking
+# -- Compiling architecture Behavioral of airplaneParking
+# End time: 21:24:11 on Jan 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {E:/work space/airplane/airplane.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:24:11 on Jan 11,2022
+# vcom -reportprogress 300 -93 -work work E:/work space/airplane/airplane.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity airplane
+# -- Compiling architecture Behavioral of airplane
+# End time: 21:24:11 on Jan 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {E:/work space/airplane/top_tp.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:24:11 on Jan 11,2022
+# vcom -reportprogress 300 -93 -work work E:/work space/airplane/top_tp.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity top_tp
+# -- Compiling architecture behavior of top_tp
+# ** Error: E:/work space/airplane/top_tp.vhd(49): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
+# ** Error: E:/work space/airplane/top_tp.vhd(49): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
+# ** Error: E:/work space/airplane/top_tp.vhd(58): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
+# ** Error: E:/work space/airplane/top_tp.vhd(58): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
+# ** Error: E:/work space/airplane/top_tp.vhd(58): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
+# ** Error (suppressible): E:/work space/airplane/top_tp.vhd(44): (vcom-1272) Length of formal "countET" is 2; length of actual is 10.
+# ** Note: E:/work space/airplane/top_tp.vhd(70): VHDL Compiler exiting
+# End time: 21:24:11 on Jan 11,2022, Elapsed time: 0:00:00
+# Errors: 6, Warnings: 0
+# ** Error: C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./Top_run_msim_rtl_vhdl.do line 14
+# C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {E:/work space/airplane/top_tp.vhd}"
+vsim work.top
+# vsim work.top 
+# Start time: 21:24:16 on Jan 11,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top(behavioral)
+# Loading work.airporte(behav)
+# Loading work.airplaneparking(behavioral)
+# Loading work.airplane(behavioral)
+# Loading work.timer(rtl)
+add wave sim:/top/*
+force -freeze sim:/top/resetT 1 0
+force -freeze sim:/top/clockT 1 0, 0 {50 ps} -r 100
+force -freeze sim:/top/fireT 0 0
+force -freeze sim:/top/weathT 1 0
+run
+run
+run
+run
+force -freeze sim:/top/resetT 0 0
+run
+run
+run
+run
+run
+force -freeze sim:/top/weathT 0 0
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 21:27:41 on Jan 11,2022, Elapsed time: 0:03:25
+# Errors: 0, Warnings: 0

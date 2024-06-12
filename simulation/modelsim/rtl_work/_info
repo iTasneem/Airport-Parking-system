@@ -1,0 +1,260 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/work space/airplane/simulation/modelsim
+Eairplane
+Z1 w1641739851
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z4 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 4
+R0
+Z7 8E:/work space/airplane/airplane.vhd
+Z8 FE:/work space/airplane/airplane.vhd
+l0
+L7 1
+V`KkgKA4j=0j;_K=AbldlN0
+!s100 4:mKVYL?[a:F=3KOeeA?]1
+Z9 OV;C;2020.1;71
+31
+Z10 !s110 1641929051
+!i10b 1
+Z11 !s108 1641929051.000000
+Z12 !s90 -reportprogress|300|-93|-work|work|E:/work space/airplane/airplane.vhd|
+Z13 !s107 E:/work space/airplane/airplane.vhd|
+!i113 1
+Z14 o-93 -work work
+Z15 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 8 airplane 0 22 `KkgKA4j=0j;_K=AbldlN0
+!i122 4
+l35
+L24 77
+VPU_RL;TizbJUH0`;m`f8d1
+!s100 I^4Q1ni1RKG2GG9H[@O_10
+R9
+31
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R14
+R15
+Eairplaneparking
+Z16 w1641928894
+R2
+R3
+R4
+R5
+R6
+!i122 3
+R0
+Z17 8E:/work space/airplane/airplaneParking.vhd
+Z18 FE:/work space/airplane/airplaneParking.vhd
+l0
+L7 1
+VE_YQ?GbCV3<_4FPne9WNE1
+!s100 QCmJen0l>2JQK<jS4^;e21
+R9
+31
+R10
+!i10b 1
+R11
+Z19 !s90 -reportprogress|300|-93|-work|work|E:/work space/airplane/airplaneParking.vhd|
+Z20 !s107 E:/work space/airplane/airplaneParking.vhd|
+!i113 1
+R14
+R15
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 15 airplaneparking 0 22 E_YQ?GbCV3<_4FPne9WNE1
+!i122 3
+l29
+L25 102
+V5G8jgoG5_CE31GRkLVJY12
+!s100 hXFOnERe8HVLiO>K6b>de2
+R9
+31
+R10
+!i10b 1
+R11
+R19
+R20
+!i113 1
+R14
+R15
+Eairporte
+Z21 w1641828688
+R2
+R5
+R6
+!i122 2
+R0
+Z22 8E:/work space/airplane/airportE.vhd
+Z23 FE:/work space/airplane/airportE.vhd
+l0
+L5 1
+V5ihke8e[CCgV]_RcQz51l0
+!s100 IS]UI^bQfnWFH[cNoo?j<1
+R9
+31
+R10
+!i10b 1
+Z24 !s108 1641929050.000000
+Z25 !s90 -reportprogress|300|-93|-work|work|E:/work space/airplane/airportE.vhd|
+Z26 !s107 E:/work space/airplane/airportE.vhd|
+!i113 1
+R14
+R15
+Abehav
+R2
+R5
+R6
+DEx4 work 8 airporte 0 22 5ihke8e[CCgV]_RcQz51l0
+!i122 2
+l17
+L15 23
+VRNn8S8Y=2kJ;2bjNmUoQJ3
+!s100 LKEk7S=B[?aJ5hPMUNkS10
+R9
+31
+R10
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R14
+R15
+Etimer
+Z27 w1641738344
+R2
+R5
+R6
+!i122 1
+R0
+Z28 8E:/work space/airplane/Timer.vhd
+Z29 FE:/work space/airplane/Timer.vhd
+l0
+L5 1
+V]mi8[SS95^QbdBzHlc]2U0
+!s100 >8<kU<>U?EA`z6GW7=XV20
+R9
+31
+Z30 !s110 1641929050
+!i10b 1
+R24
+Z31 !s90 -reportprogress|300|-93|-work|work|E:/work space/airplane/Timer.vhd|
+Z32 !s107 E:/work space/airplane/Timer.vhd|
+!i113 1
+R14
+R15
+Artl
+R2
+R5
+R6
+DEx4 work 5 timer 0 22 ]mi8[SS95^QbdBzHlc]2U0
+!i122 1
+l19
+L14 29
+VbcRoJ3hRcI9JJM7<]7LgR0
+!s100 6k]3<DCl0Dai3R:_fgd1Y1
+R9
+31
+R30
+!i10b 1
+R24
+R31
+R32
+!i113 1
+R14
+R15
+Etop
+Z33 w1641829761
+R2
+R3
+R4
+R5
+R6
+!i122 0
+R0
+Z34 8E:/work space/airplane/Top.vhd
+Z35 FE:/work space/airplane/Top.vhd
+l0
+L7 1
+VUb[`X`eT`NgAQkeaQR9Ml0
+!s100 iGUGTzoHi>lc<15VTVi;E3
+R9
+31
+R30
+!i10b 1
+R24
+Z36 !s90 -reportprogress|300|-93|-work|work|E:/work space/airplane/Top.vhd|
+Z37 !s107 E:/work space/airplane/Top.vhd|
+!i113 1
+R14
+R15
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 3 top 0 22 Ub[`X`eT`NgAQkeaQR9Ml0
+!i122 0
+l65
+L19 91
+VeihZW_zb>6kEd=a]iY1nG1
+!s100 N3jR2QT7PGf_hl1>Pb?lC0
+R9
+31
+R30
+!i10b 1
+R24
+R36
+R37
+!i113 1
+R14
+R15
+Etop_tp
+w1641748434
+R5
+R6
+!i122 5
+R0
+8E:/work space/airplane/top_tp.vhd
+FE:/work space/airplane/top_tp.vhd
+l0
+L6 1
+ViLQFJ`0FSLhfd_J41:Z7;2
+!s100 CMRn?T0k:<cLQZM[D4[Vb0
+R9
+31
+R10
+!i10b 1
+R11
+!s90 -reportprogress|300|-93|-work|work|E:/work space/airplane/top_tp.vhd|
+!s107 E:/work space/airplane/top_tp.vhd|
+!i113 1
+R14
+R15

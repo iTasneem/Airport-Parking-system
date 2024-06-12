@@ -1,0 +1,13 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {E:/work space/airplane/Top.vhd}
+vcom -93 -work work {E:/work space/airplane/Timer.vhd}
+vcom -93 -work work {E:/work space/airplane/airportE.vhd}
+vcom -93 -work work {E:/work space/airplane/airplaneParking.vhd}
+vcom -93 -work work {E:/work space/airplane/airplane.vhd}
+

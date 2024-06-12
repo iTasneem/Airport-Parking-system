@@ -1,0 +1,1256 @@
+Timing Analyzer report for Top
+Tue Jan 11 21:23:52 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'clockT'
+ 13. Slow 1200mV 85C Model Hold: 'clockT'
+ 14. Slow 1200mV 85C Model Metastability Summary
+ 15. Slow 1200mV 0C Model Fmax Summary
+ 16. Slow 1200mV 0C Model Setup Summary
+ 17. Slow 1200mV 0C Model Hold Summary
+ 18. Slow 1200mV 0C Model Recovery Summary
+ 19. Slow 1200mV 0C Model Removal Summary
+ 20. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 21. Slow 1200mV 0C Model Setup: 'clockT'
+ 22. Slow 1200mV 0C Model Hold: 'clockT'
+ 23. Slow 1200mV 0C Model Metastability Summary
+ 24. Fast 1200mV 0C Model Setup Summary
+ 25. Fast 1200mV 0C Model Hold Summary
+ 26. Fast 1200mV 0C Model Recovery Summary
+ 27. Fast 1200mV 0C Model Removal Summary
+ 28. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 29. Fast 1200mV 0C Model Setup: 'clockT'
+ 30. Fast 1200mV 0C Model Hold: 'clockT'
+ 31. Fast 1200mV 0C Model Metastability Summary
+ 32. Multicorner Timing Analysis Summary
+ 33. Board Trace Model Assignments
+ 34. Input Transition Times
+ 35. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 36. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 37. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 38. Setup Transfers
+ 39. Hold Transfers
+ 40. Report TCCS
+ 41. Report RSKM
+ 42. Unconstrained Paths Summary
+ 43. Clock Status Summary
+ 44. Unconstrained Input Ports
+ 45. Unconstrained Output Ports
+ 46. Unconstrained Input Ports
+ 47. Unconstrained Output Ports
+ 48. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; Top                                                 ;
+; Device Family         ; Cyclone IV E                                        ;
+; Device Name           ; EP4CE6E22C6                                         ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.02        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.7%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; clockT     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clockT } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                        ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 250.38 MHz ; 250.0 MHz       ; clockT     ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++--------+--------+-------------------+
+; Clock  ; Slack  ; End Point TNS     ;
++--------+--------+-------------------+
+; clockT ; -2.994 ; -128.175          ;
++--------+--------+-------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++--------+-------+-------------------+
+; Clock  ; Slack ; End Point TNS     ;
++--------+-------+-------------------+
+; clockT ; 0.376 ; 0.000             ;
++--------+-------+-------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++--------+--------+---------------------------------+
+; Clock  ; Slack  ; End Point TNS                   ;
++--------+--------+---------------------------------+
+; clockT ; -3.000 ; -69.000                         ;
++--------+--------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clockT'                                                                                                                  ;
++--------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                          ; To Node                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.994 ; airplane:airpl|Timer:tim|Ticks[5]  ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; -0.104     ; 3.885      ;
+; -2.916 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; -0.104     ; 3.807      ;
+; -2.884 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[31] ; clockT       ; clockT      ; 1.000        ; -0.104     ; 3.775      ;
+; -2.883 ; airplane:airpl|Timer:tim|Ticks[15] ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; -0.076     ; 3.802      ;
+; -2.882 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.813      ;
+; -2.876 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.807      ;
+; -2.872 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.803      ;
+; -2.870 ; airplane:airpl|Timer:tim|Ticks[5]  ; airplane:airpl|Timer:tim|Ticks[31] ; clockT       ; clockT      ; 1.000        ; -0.104     ; 3.761      ;
+; -2.866 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.797      ;
+; -2.861 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.426      ;
+; -2.861 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.426      ;
+; -2.861 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.426      ;
+; -2.861 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.426      ;
+; -2.861 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.426      ;
+; -2.861 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.426      ;
+; -2.856 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.421      ;
+; -2.856 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.421      ;
+; -2.856 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.421      ;
+; -2.856 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.421      ;
+; -2.856 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.421      ;
+; -2.856 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.421      ;
+; -2.837 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[0]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.768      ;
+; -2.837 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.768      ;
+; -2.837 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.768      ;
+; -2.837 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.768      ;
+; -2.837 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.768      ;
+; -2.834 ; airplane:airpl|Timer:tim|Ticks[1]  ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; 0.289      ; 4.118      ;
+; -2.829 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 1.000        ; -0.432     ; 3.392      ;
+; -2.827 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[0]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.758      ;
+; -2.827 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.758      ;
+; -2.827 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.758      ;
+; -2.827 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.758      ;
+; -2.827 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.758      ;
+; -2.823 ; airplane:airpl|Timer:tim|Ticks[0]  ; airplane:airpl|Timer:tim|Ticks[31] ; clockT       ; clockT      ; 1.000        ; 0.289      ; 4.107      ;
+; -2.823 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 1.000        ; -0.432     ; 3.386      ;
+; -2.811 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[0]  ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.377      ;
+; -2.811 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[1]  ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.377      ;
+; -2.811 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[2]  ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.377      ;
+; -2.811 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[3]  ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.377      ;
+; -2.810 ; airplane:airpl|Timer:tim|Ticks[0]  ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; 0.289      ; 4.094      ;
+; -2.806 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[0]  ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.372      ;
+; -2.806 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[1]  ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.372      ;
+; -2.806 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[2]  ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.372      ;
+; -2.806 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[3]  ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.372      ;
+; -2.805 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.370      ;
+; -2.805 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.370      ;
+; -2.805 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.370      ;
+; -2.805 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.370      ;
+; -2.805 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.370      ;
+; -2.805 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.430     ; 3.370      ;
+; -2.803 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 1.000        ; -0.432     ; 3.366      ;
+; -2.802 ; airplane:airpl|Timer:tim|Ticks[6]  ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; -0.104     ; 3.693      ;
+; -2.800 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[18] ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.366      ;
+; -2.800 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[19] ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.366      ;
+; -2.800 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[20] ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.366      ;
+; -2.800 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[21] ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.366      ;
+; -2.797 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 1.000        ; -0.432     ; 3.360      ;
+; -2.795 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[18] ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.361      ;
+; -2.795 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[19] ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.361      ;
+; -2.795 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[20] ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.361      ;
+; -2.795 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[21] ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.361      ;
+; -2.784 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[0]        ; clockT       ; clockT      ; 1.000        ; -0.432     ; 3.347      ;
+; -2.784 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 1.000        ; -0.432     ; 3.347      ;
+; -2.784 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 1.000        ; -0.432     ; 3.347      ;
+; -2.784 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 1.000        ; -0.432     ; 3.347      ;
+; -2.784 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 1.000        ; -0.432     ; 3.347      ;
+; -2.776 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.458     ; 3.313      ;
+; -2.776 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.458     ; 3.313      ;
+; -2.776 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.458     ; 3.313      ;
+; -2.776 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.458     ; 3.313      ;
+; -2.776 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.458     ; 3.313      ;
+; -2.776 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.458     ; 3.313      ;
+; -2.769 ; airplane:airpl|Timer:tim|Ticks[6]  ; airplane:airpl|Timer:tim|Ticks[31] ; clockT       ; clockT      ; 1.000        ; -0.104     ; 3.660      ;
+; -2.759 ; airplane:airpl|Timer:tim|Ticks[15] ; airplane:airpl|Timer:tim|Ticks[31] ; clockT       ; clockT      ; 1.000        ; -0.076     ; 3.678      ;
+; -2.758 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[0]        ; clockT       ; clockT      ; 1.000        ; -0.432     ; 3.321      ;
+; -2.758 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 1.000        ; -0.432     ; 3.321      ;
+; -2.758 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 1.000        ; -0.432     ; 3.321      ;
+; -2.758 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 1.000        ; -0.432     ; 3.321      ;
+; -2.758 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 1.000        ; -0.432     ; 3.321      ;
+; -2.755 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[0]  ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.321      ;
+; -2.755 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[1]  ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.321      ;
+; -2.755 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[2]  ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.321      ;
+; -2.755 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[3]  ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.321      ;
+; -2.745 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.676      ;
+; -2.744 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[18] ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.310      ;
+; -2.744 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[19] ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.310      ;
+; -2.744 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[20] ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.310      ;
+; -2.744 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[21] ; clockT       ; clockT      ; 1.000        ; -0.429     ; 3.310      ;
+; -2.739 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.670      ;
+; -2.739 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 1.000        ; -0.064     ; 3.670      ;
+; -2.738 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.063     ; 3.670      ;
+; -2.738 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.063     ; 3.670      ;
+; -2.738 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.063     ; 3.670      ;
+; -2.738 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.063     ; 3.670      ;
+; -2.738 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.063     ; 3.670      ;
+; -2.738 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.063     ; 3.670      ;
+; -2.738 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.063     ; 3.670      ;
+; -2.738 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.063     ; 3.670      ;
+; -2.738 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.063     ; 3.670      ;
+; -2.738 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.063     ; 3.670      ;
++--------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'clockT'                                                                                                                  ;
++-------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.376 ; airplane:airpl|NextState.flight    ; airplane:airpl|PrState.flight      ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.597      ;
+; 0.377 ; airplane:airpl|NextState.park      ; airplane:airpl|PrState.park        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.598      ;
+; 0.393 ; airplane:airpl|PrState.flight      ; airplane:airpl|A                   ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.614      ;
+; 0.485 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.074      ;
+; 0.497 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[1]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.086      ;
+; 0.501 ; airplaneParking:park|cou[6]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.090      ;
+; 0.515 ; airplane:airpl|A                   ; AA                                 ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.736      ;
+; 0.532 ; airplane:airpl|B                   ; BB                                 ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.753      ;
+; 0.537 ; airplaneParking:park|L             ; airplane:airpl|B                   ; clockT       ; clockT      ; 0.000        ; 0.063      ; 0.757      ;
+; 0.537 ; airplaneParking:park|cou[6]        ; airplaneParking:park|count[6]      ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.758      ;
+; 0.550 ; airpotEmerTs                       ; airplaneParking:park|L             ; clockT       ; clockT      ; 0.000        ; 0.063      ; 0.770      ;
+; 0.556 ; airplaneParking:park|cou[7]        ; airplaneParking:park|count[7]      ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.777      ;
+; 0.560 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[1]        ; clockT       ; clockT      ; 0.000        ; 0.078      ; 0.795      ;
+; 0.564 ; airplaneParking:park|cou[0]        ; airplaneParking:park|count[0]      ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.785      ;
+; 0.576 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.797      ;
+; 0.577 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.798      ;
+; 0.578 ; airplaneParking:park|cou[6]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.799      ;
+; 0.581 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.802      ;
+; 0.595 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.184      ;
+; 0.598 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[0]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.819      ;
+; 0.606 ; airplane:airpl|PrState.park        ; airplane:airpl|B                   ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.827      ;
+; 0.611 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.200      ;
+; 0.611 ; airplaneParking:park|cou[6]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.200      ;
+; 0.625 ; airpotEmerTs                       ; airplaneParking:park|entranceA     ; clockT       ; clockT      ; 0.000        ; 0.063      ; 0.845      ;
+; 0.636 ; airplaneParking:park|exitB         ; airplane:airpl|B                   ; clockT       ; clockT      ; 0.000        ; 0.063      ; 0.856      ;
+; 0.639 ; airplaneParking:park|exitB         ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.063      ; 0.859      ;
+; 0.639 ; airplaneParking:park|entranceA     ; airplane:airpl|A                   ; clockT       ; clockT      ; 0.000        ; 0.063      ; 0.859      ;
+; 0.640 ; airplaneParking:park|exitB         ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.063      ; 0.860      ;
+; 0.670 ; airpotEmerTs                       ; airplaneParking:park|exitB         ; clockT       ; clockT      ; 0.000        ; 0.063      ; 0.890      ;
+; 0.683 ; airplaneParking:park|cou[3]        ; airplaneParking:park|count[3]      ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.904      ;
+; 0.685 ; airplaneParking:park|cou[9]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.078      ; 0.920      ;
+; 0.696 ; airplane:airpl|Timer:tim|f         ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.917      ;
+; 0.697 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.078      ; 0.932      ;
+; 0.697 ; airplane:airpl|Timer:tim|f         ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.918      ;
+; 0.706 ; airplaneParking:park|cou[4]        ; airplaneParking:park|count[4]      ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.927      ;
+; 0.707 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.928      ;
+; 0.707 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.296      ;
+; 0.712 ; airplaneParking:park|cou[5]        ; airplaneParking:park|count[5]      ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.933      ;
+; 0.713 ; airplaneParking:park|cou[2]        ; airplaneParking:park|count[2]      ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.934      ;
+; 0.719 ; airplaneParking:park|cou[5]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.940      ;
+; 0.721 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.310      ;
+; 0.737 ; airplaneParking:park|cou[5]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.326      ;
+; 0.745 ; airplaneParking:park|L             ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.063      ; 0.965      ;
+; 0.756 ; airplane:airpl|Timer:tim|f         ; airplane:airpl|B                   ; clockT       ; clockT      ; 0.000        ; 0.064      ; 0.977      ;
+; 0.789 ; airplane:airpl|PrState.park        ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.010      ;
+; 0.790 ; airplane:airpl|PrState.park        ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.011      ;
+; 0.798 ; BB                                 ; airplaneParking:park|exitB         ; clockT       ; clockT      ; 0.000        ; 0.063      ; 1.018      ;
+; 0.800 ; airplaneParking:park|L             ; airplane:airpl|A                   ; clockT       ; clockT      ; 0.000        ; 0.063      ; 1.020      ;
+; 0.817 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.406      ;
+; 0.829 ; BB                                 ; airplaneParking:park|entranceA     ; clockT       ; clockT      ; 0.000        ; 0.063      ; 1.049      ;
+; 0.835 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.424      ;
+; 0.847 ; airplaneParking:park|cou[5]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.436      ;
+; 0.851 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.072      ;
+; 0.854 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.443      ;
+; 0.865 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.086      ;
+; 0.867 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.088      ;
+; 0.867 ; airplaneParking:park|cou[6]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.088      ;
+; 0.867 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.088      ;
+; 0.895 ; airplaneParking:park|cou[1]        ; airplaneParking:park|count[1]      ; clockT       ; clockT      ; 0.000        ; -0.290     ; 0.762      ;
+; 0.899 ; airplane:airpl|NextState.flight    ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.120      ;
+; 0.900 ; airplane:airpl|NextState.park      ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.121      ;
+; 0.922 ; airplaneParking:park|L             ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.063      ; 1.142      ;
+; 0.945 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.534      ;
+; 0.961 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.182      ;
+; 0.963 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.184      ;
+; 0.964 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.553      ;
+; 0.977 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.198      ;
+; 0.977 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.198      ;
+; 0.979 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.200      ;
+; 0.986 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.078      ; 1.221      ;
+; 0.993 ; airplaneParking:park|cou[5]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.214      ;
+; 0.996 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.217      ;
+; 0.998 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.219      ;
+; 1.014 ; AA                                 ; airplaneParking:park|exitB         ; clockT       ; clockT      ; 0.000        ; 0.063      ; 1.234      ;
+; 1.034 ; BB                                 ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.623      ;
+; 1.038 ; airplaneParking:park|cou[8]        ; airplaneParking:park|count[8]      ; clockT       ; clockT      ; 0.000        ; -0.290     ; 0.905      ;
+; 1.049 ; airpotEmerTs                       ; airplaneParking:park|cou[1]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.638      ;
+; 1.049 ; airpotEmerTs                       ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.638      ;
+; 1.049 ; airpotEmerTs                       ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.432      ; 1.638      ;
+; 1.053 ; airplane:airpl|Timer:tim|Ticks[11] ; airplane:airpl|Timer:tim|Ticks[12] ; clockT       ; clockT      ; 0.000        ; 0.433      ; 1.643      ;
+; 1.061 ; AA                                 ; airplaneParking:park|entranceA     ; clockT       ; clockT      ; 0.000        ; 0.063      ; 1.281      ;
+; 1.073 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.294      ;
+; 1.074 ; airplane:airpl|Timer:tim|Ticks[10] ; airplane:airpl|Timer:tim|Ticks[12] ; clockT       ; clockT      ; 0.000        ; 0.433      ; 1.664      ;
+; 1.089 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.310      ;
+; 1.091 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.312      ;
+; 1.092 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[26] ; clockT       ; clockT      ; 0.000        ; 0.430      ; 1.679      ;
+; 1.095 ; airplane:airpl|PrState.flight      ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.316      ;
+; 1.096 ; airplane:airpl|PrState.flight      ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.317      ;
+; 1.103 ; airplaneParking:park|cou[5]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.324      ;
+; 1.108 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.329      ;
+; 1.108 ; airplane:airpl|Timer:tim|Ticks[24] ; airplane:airpl|Timer:tim|Ticks[26] ; clockT       ; clockT      ; 0.000        ; 0.430      ; 1.695      ;
+; 1.110 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.331      ;
+; 1.123 ; airplane:airpl|Timer:tim|Ticks[11] ; airplane:airpl|Timer:tim|Ticks[11] ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.344      ;
+; 1.127 ; airplane:airpl|Timer:tim|Ticks[9]  ; airplane:airpl|Timer:tim|Ticks[9]  ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.348      ;
+; 1.129 ; airplane:airpl|Timer:tim|Ticks[17] ; airplane:airpl|Timer:tim|Ticks[17] ; clockT       ; clockT      ; 0.000        ; 0.078      ; 1.364      ;
+; 1.133 ; airplane:airpl|Timer:tim|Ticks[27] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 0.000        ; 0.063      ; 1.353      ;
+; 1.134 ; airplane:airpl|Timer:tim|Ticks[26] ; airplane:airpl|Timer:tim|Ticks[26] ; clockT       ; clockT      ; 0.000        ; 0.078      ; 1.369      ;
+; 1.143 ; airplane:airpl|Timer:tim|Ticks[12] ; airplane:airpl|Timer:tim|Ticks[12] ; clockT       ; clockT      ; 0.000        ; 0.079      ; 1.379      ;
+; 1.150 ; airplane:airpl|Timer:tim|Ticks[28] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 0.000        ; 0.063      ; 1.370      ;
+; 1.152 ; airplane:airpl|Timer:tim|Ticks[10] ; airplane:airpl|Timer:tim|Ticks[10] ; clockT       ; clockT      ; 0.000        ; 0.064      ; 1.373      ;
++-------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                         ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 282.81 MHz ; 250.0 MHz       ; clockT     ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++--------+--------+------------------+
+; Clock  ; Slack  ; End Point TNS    ;
++--------+--------+------------------+
+; clockT ; -2.536 ; -110.553         ;
++--------+--------+------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++--------+-------+------------------+
+; Clock  ; Slack ; End Point TNS    ;
++--------+-------+------------------+
+; clockT ; 0.335 ; 0.000            ;
++--------+-------+------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++--------+--------+--------------------------------+
+; Clock  ; Slack  ; End Point TNS                  ;
++--------+--------+--------------------------------+
+; clockT ; -3.000 ; -69.000                        ;
++--------+--------+--------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'clockT'                                                                                                                   ;
++--------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                          ; To Node                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.536 ; airplane:airpl|Timer:tim|Ticks[5]  ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; -0.095     ; 3.436      ;
+; -2.517 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.120      ;
+; -2.517 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.120      ;
+; -2.517 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.120      ;
+; -2.517 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.120      ;
+; -2.517 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.120      ;
+; -2.517 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.120      ;
+; -2.513 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.116      ;
+; -2.513 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.116      ;
+; -2.513 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.116      ;
+; -2.513 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.116      ;
+; -2.513 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.116      ;
+; -2.513 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.116      ;
+; -2.479 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[0]  ; clockT       ; clockT      ; 1.000        ; -0.391     ; 3.083      ;
+; -2.479 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[1]  ; clockT       ; clockT      ; 1.000        ; -0.391     ; 3.083      ;
+; -2.479 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[2]  ; clockT       ; clockT      ; 1.000        ; -0.391     ; 3.083      ;
+; -2.479 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[3]  ; clockT       ; clockT      ; 1.000        ; -0.391     ; 3.083      ;
+; -2.475 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[0]  ; clockT       ; clockT      ; 1.000        ; -0.391     ; 3.079      ;
+; -2.475 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[1]  ; clockT       ; clockT      ; 1.000        ; -0.391     ; 3.079      ;
+; -2.475 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[2]  ; clockT       ; clockT      ; 1.000        ; -0.391     ; 3.079      ;
+; -2.475 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[3]  ; clockT       ; clockT      ; 1.000        ; -0.391     ; 3.079      ;
+; -2.472 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; -0.095     ; 3.372      ;
+; -2.470 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[18] ; clockT       ; clockT      ; 1.000        ; -0.390     ; 3.075      ;
+; -2.470 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[19] ; clockT       ; clockT      ; 1.000        ; -0.390     ; 3.075      ;
+; -2.470 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[20] ; clockT       ; clockT      ; 1.000        ; -0.390     ; 3.075      ;
+; -2.470 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[21] ; clockT       ; clockT      ; 1.000        ; -0.390     ; 3.075      ;
+; -2.469 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.072      ;
+; -2.469 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.072      ;
+; -2.469 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.072      ;
+; -2.469 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.072      ;
+; -2.469 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.072      ;
+; -2.469 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 3.072      ;
+; -2.466 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[18] ; clockT       ; clockT      ; 1.000        ; -0.390     ; 3.071      ;
+; -2.466 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[19] ; clockT       ; clockT      ; 1.000        ; -0.390     ; 3.071      ;
+; -2.466 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[20] ; clockT       ; clockT      ; 1.000        ; -0.390     ; 3.071      ;
+; -2.466 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[21] ; clockT       ; clockT      ; 1.000        ; -0.390     ; 3.071      ;
+; -2.456 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[0]        ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.394      ;
+; -2.456 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.394      ;
+; -2.456 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.394      ;
+; -2.456 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.394      ;
+; -2.456 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.394      ;
+; -2.456 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.394      ;
+; -2.456 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.394      ;
+; -2.447 ; airplane:airpl|Timer:tim|Ticks[15] ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; -0.069     ; 3.373      ;
+; -2.446 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[0]        ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.384      ;
+; -2.446 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.384      ;
+; -2.446 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.384      ;
+; -2.446 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.384      ;
+; -2.446 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.384      ;
+; -2.446 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.384      ;
+; -2.446 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.384      ;
+; -2.435 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[31] ; clockT       ; clockT      ; 1.000        ; -0.095     ; 3.335      ;
+; -2.431 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[0]  ; clockT       ; clockT      ; 1.000        ; -0.391     ; 3.035      ;
+; -2.431 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[1]  ; clockT       ; clockT      ; 1.000        ; -0.391     ; 3.035      ;
+; -2.431 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[2]  ; clockT       ; clockT      ; 1.000        ; -0.391     ; 3.035      ;
+; -2.431 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[3]  ; clockT       ; clockT      ; 1.000        ; -0.391     ; 3.035      ;
+; -2.422 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[18] ; clockT       ; clockT      ; 1.000        ; -0.390     ; 3.027      ;
+; -2.422 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[19] ; clockT       ; clockT      ; 1.000        ; -0.390     ; 3.027      ;
+; -2.422 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[20] ; clockT       ; clockT      ; 1.000        ; -0.390     ; 3.027      ;
+; -2.422 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[21] ; clockT       ; clockT      ; 1.000        ; -0.390     ; 3.027      ;
+; -2.420 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.418     ; 2.997      ;
+; -2.420 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.418     ; 2.997      ;
+; -2.420 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.418     ; 2.997      ;
+; -2.420 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.418     ; 2.997      ;
+; -2.420 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.418     ; 2.997      ;
+; -2.420 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.418     ; 2.997      ;
+; -2.413 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[0]        ; clockT       ; clockT      ; 1.000        ; -0.393     ; 3.015      ;
+; -2.413 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 1.000        ; -0.393     ; 3.015      ;
+; -2.413 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 1.000        ; -0.393     ; 3.015      ;
+; -2.413 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 1.000        ; -0.393     ; 3.015      ;
+; -2.413 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 1.000        ; -0.393     ; 3.015      ;
+; -2.413 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 1.000        ; -0.393     ; 3.015      ;
+; -2.413 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 1.000        ; -0.393     ; 3.015      ;
+; -2.403 ; airplane:airpl|Timer:tim|Ticks[5]  ; airplane:airpl|Timer:tim|Ticks[31] ; clockT       ; clockT      ; 1.000        ; -0.095     ; 3.303      ;
+; -2.393 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.331      ;
+; -2.393 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.331      ;
+; -2.393 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.331      ;
+; -2.393 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.331      ;
+; -2.393 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.331      ;
+; -2.393 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.331      ;
+; -2.388 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[0]        ; clockT       ; clockT      ; 1.000        ; -0.393     ; 2.990      ;
+; -2.388 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 1.000        ; -0.393     ; 2.990      ;
+; -2.388 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 1.000        ; -0.393     ; 2.990      ;
+; -2.388 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 1.000        ; -0.393     ; 2.990      ;
+; -2.388 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 1.000        ; -0.393     ; 2.990      ;
+; -2.388 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 1.000        ; -0.393     ; 2.990      ;
+; -2.388 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 1.000        ; -0.393     ; 2.990      ;
+; -2.388 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.326      ;
+; -2.388 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.326      ;
+; -2.388 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.326      ;
+; -2.388 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.326      ;
+; -2.388 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.326      ;
+; -2.388 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.057     ; 3.326      ;
+; -2.382 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[0]  ; clockT       ; clockT      ; 1.000        ; -0.417     ; 2.960      ;
+; -2.382 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[1]  ; clockT       ; clockT      ; 1.000        ; -0.417     ; 2.960      ;
+; -2.382 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[2]  ; clockT       ; clockT      ; 1.000        ; -0.417     ; 2.960      ;
+; -2.382 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[3]  ; clockT       ; clockT      ; 1.000        ; -0.417     ; 2.960      ;
+; -2.377 ; airplane:airpl|Timer:tim|Ticks[15] ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 2.980      ;
+; -2.377 ; airplane:airpl|Timer:tim|Ticks[15] ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 2.980      ;
+; -2.377 ; airplane:airpl|Timer:tim|Ticks[15] ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.392     ; 2.980      ;
++--------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'clockT'                                                                                                                   ;
++-------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.335 ; airplane:airpl|NextState.flight    ; airplane:airpl|PrState.flight      ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.536      ;
+; 0.342 ; airplane:airpl|NextState.park      ; airplane:airpl|PrState.park        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.543      ;
+; 0.346 ; airplane:airpl|PrState.flight      ; airplane:airpl|A                   ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.547      ;
+; 0.428 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 0.965      ;
+; 0.431 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[1]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 0.968      ;
+; 0.442 ; airplaneParking:park|cou[6]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 0.979      ;
+; 0.476 ; airplane:airpl|A                   ; AA                                 ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.677      ;
+; 0.489 ; airplane:airpl|B                   ; BB                                 ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.690      ;
+; 0.491 ; airplaneParking:park|L             ; airplane:airpl|B                   ; clockT       ; clockT      ; 0.000        ; 0.056      ; 0.691      ;
+; 0.496 ; airplaneParking:park|cou[6]        ; airplaneParking:park|count[6]      ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.697      ;
+; 0.497 ; airpotEmerTs                       ; airplaneParking:park|L             ; clockT       ; clockT      ; 0.000        ; 0.056      ; 0.697      ;
+; 0.503 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[1]        ; clockT       ; clockT      ; 0.000        ; 0.070      ; 0.717      ;
+; 0.513 ; airplaneParking:park|cou[7]        ; airplaneParking:park|count[7]      ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.714      ;
+; 0.517 ; airplaneParking:park|cou[0]        ; airplaneParking:park|count[0]      ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.718      ;
+; 0.517 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.718      ;
+; 0.517 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.054      ;
+; 0.518 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.719      ;
+; 0.520 ; airplaneParking:park|cou[6]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.721      ;
+; 0.521 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.722      ;
+; 0.531 ; airplaneParking:park|cou[6]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.068      ;
+; 0.534 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[0]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.735      ;
+; 0.534 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.071      ;
+; 0.541 ; airplane:airpl|PrState.park        ; airplane:airpl|B                   ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.742      ;
+; 0.553 ; airpotEmerTs                       ; airplaneParking:park|entranceA     ; clockT       ; clockT      ; 0.000        ; 0.056      ; 0.753      ;
+; 0.576 ; airplaneParking:park|exitB         ; airplane:airpl|B                   ; clockT       ; clockT      ; 0.000        ; 0.056      ; 0.776      ;
+; 0.577 ; airplaneParking:park|entranceA     ; airplane:airpl|A                   ; clockT       ; clockT      ; 0.000        ; 0.056      ; 0.777      ;
+; 0.579 ; airplaneParking:park|exitB         ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.056      ; 0.779      ;
+; 0.587 ; airplaneParking:park|exitB         ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.056      ; 0.787      ;
+; 0.597 ; airpotEmerTs                       ; airplaneParking:park|exitB         ; clockT       ; clockT      ; 0.000        ; 0.056      ; 0.797      ;
+; 0.617 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.154      ;
+; 0.619 ; airplaneParking:park|cou[9]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.070      ; 0.833      ;
+; 0.623 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.160      ;
+; 0.626 ; airplaneParking:park|cou[3]        ; airplaneParking:park|count[3]      ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.827      ;
+; 0.628 ; airplane:airpl|Timer:tim|f         ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.829      ;
+; 0.629 ; airplane:airpl|Timer:tim|f         ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.830      ;
+; 0.636 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.070      ; 0.850      ;
+; 0.641 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.842      ;
+; 0.649 ; airplaneParking:park|cou[4]        ; airplaneParking:park|count[4]      ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.850      ;
+; 0.655 ; airplaneParking:park|cou[5]        ; airplaneParking:park|count[5]      ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.856      ;
+; 0.655 ; airplaneParking:park|cou[2]        ; airplaneParking:park|count[2]      ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.856      ;
+; 0.656 ; airplaneParking:park|cou[5]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.857      ;
+; 0.659 ; airplaneParking:park|cou[5]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.196      ;
+; 0.678 ; airplaneParking:park|L             ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.056      ; 0.878      ;
+; 0.691 ; airplane:airpl|Timer:tim|f         ; airplane:airpl|B                   ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.892      ;
+; 0.706 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.243      ;
+; 0.710 ; airplane:airpl|PrState.park        ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.911      ;
+; 0.711 ; airplane:airpl|PrState.park        ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.912      ;
+; 0.717 ; BB                                 ; airplaneParking:park|exitB         ; clockT       ; clockT      ; 0.000        ; 0.056      ; 0.917      ;
+; 0.726 ; airplaneParking:park|L             ; airplane:airpl|A                   ; clockT       ; clockT      ; 0.000        ; 0.056      ; 0.926      ;
+; 0.726 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.263      ;
+; 0.743 ; BB                                 ; airplaneParking:park|entranceA     ; clockT       ; clockT      ; 0.000        ; 0.056      ; 0.943      ;
+; 0.746 ; airplaneParking:park|cou[5]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.283      ;
+; 0.754 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.291      ;
+; 0.761 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.962      ;
+; 0.767 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.968      ;
+; 0.771 ; airplaneParking:park|cou[6]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.972      ;
+; 0.774 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.975      ;
+; 0.774 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 0.975      ;
+; 0.815 ; airplane:airpl|NextState.flight    ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.016      ;
+; 0.815 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.352      ;
+; 0.816 ; airplane:airpl|NextState.park      ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.017      ;
+; 0.824 ; airplaneParking:park|cou[1]        ; airplaneParking:park|count[1]      ; clockT       ; clockT      ; 0.000        ; -0.266     ; 0.702      ;
+; 0.843 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.380      ;
+; 0.848 ; airplaneParking:park|L             ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.056      ; 1.048      ;
+; 0.850 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.051      ;
+; 0.857 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.058      ;
+; 0.863 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.064      ;
+; 0.863 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.064      ;
+; 0.870 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.071      ;
+; 0.886 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.070      ; 1.100      ;
+; 0.891 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.092      ;
+; 0.898 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.099      ;
+; 0.899 ; airplaneParking:park|cou[5]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.100      ;
+; 0.907 ; AA                                 ; airplaneParking:park|exitB         ; clockT       ; clockT      ; 0.000        ; 0.056      ; 1.107      ;
+; 0.933 ; BB                                 ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.470      ;
+; 0.946 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.147      ;
+; 0.950 ; airplaneParking:park|cou[8]        ; airplaneParking:park|count[8]      ; clockT       ; clockT      ; 0.000        ; -0.266     ; 0.828      ;
+; 0.957 ; AA                                 ; airplaneParking:park|entranceA     ; clockT       ; clockT      ; 0.000        ; 0.056      ; 1.157      ;
+; 0.959 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.160      ;
+; 0.960 ; airplane:airpl|Timer:tim|Ticks[11] ; airplane:airpl|Timer:tim|Ticks[12] ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.497      ;
+; 0.966 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.167      ;
+; 0.967 ; airpotEmerTs                       ; airplaneParking:park|cou[1]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.504      ;
+; 0.967 ; airpotEmerTs                       ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.504      ;
+; 0.967 ; airpotEmerTs                       ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.504      ;
+; 0.980 ; airplane:airpl|Timer:tim|Ticks[10] ; airplane:airpl|Timer:tim|Ticks[12] ; clockT       ; clockT      ; 0.000        ; 0.393      ; 1.517      ;
+; 0.986 ; airplane:airpl|PrState.flight      ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.187      ;
+; 0.986 ; airplaneParking:park|cou[5]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.187      ;
+; 0.987 ; airplane:airpl|PrState.flight      ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.188      ;
+; 0.987 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.188      ;
+; 0.994 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.195      ;
+; 0.997 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[26] ; clockT       ; clockT      ; 0.000        ; 0.392      ; 1.533      ;
+; 1.009 ; airplane:airpl|Timer:tim|Ticks[24] ; airplane:airpl|Timer:tim|Ticks[26] ; clockT       ; clockT      ; 0.000        ; 0.392      ; 1.545      ;
+; 1.031 ; airplane:airpl|Timer:tim|Ticks[11] ; airplane:airpl|Timer:tim|Ticks[11] ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.232      ;
+; 1.033 ; airplane:airpl|Timer:tim|Ticks[17] ; airplane:airpl|Timer:tim|Ticks[17] ; clockT       ; clockT      ; 0.000        ; 0.070      ; 1.247      ;
+; 1.034 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.070      ; 1.248      ;
+; 1.035 ; airplane:airpl|Timer:tim|Ticks[9]  ; airplane:airpl|Timer:tim|Ticks[9]  ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.236      ;
+; 1.039 ; airplane:airpl|Timer:tim|Ticks[26] ; airplane:airpl|Timer:tim|Ticks[26] ; clockT       ; clockT      ; 0.000        ; 0.070      ; 1.253      ;
+; 1.040 ; airplane:airpl|Timer:tim|Ticks[27] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.241      ;
+; 1.048 ; airplane:airpl|Timer:tim|Ticks[12] ; airplane:airpl|Timer:tim|Ticks[12] ; clockT       ; clockT      ; 0.000        ; 0.071      ; 1.263      ;
+; 1.053 ; airplane:airpl|Timer:tim|Ticks[28] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 0.000        ; 0.057      ; 1.254      ;
++-------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++--------+--------+------------------+
+; Clock  ; Slack  ; End Point TNS    ;
++--------+--------+------------------+
+; clockT ; -1.285 ; -48.582          ;
++--------+--------+------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++--------+-------+------------------+
+; Clock  ; Slack ; End Point TNS    ;
++--------+-------+------------------+
+; clockT ; 0.195 ; 0.000            ;
++--------+-------+------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++--------+--------+--------------------------------+
+; Clock  ; Slack  ; End Point TNS                  ;
++--------+--------+--------------------------------+
+; clockT ; -3.000 ; -73.657                        ;
++--------+--------+--------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'clockT'                                                                                                                   ;
++--------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                          ; To Node                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.285 ; airplane:airpl|Timer:tim|Ticks[5]  ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; -0.055     ; 2.217      ;
+; -1.241 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; -0.055     ; 2.173      ;
+; -1.238 ; airplane:airpl|Timer:tim|Ticks[15] ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; -0.044     ; 2.181      ;
+; -1.213 ; airplane:airpl|Timer:tim|Ticks[1]  ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; 0.157      ; 2.357      ;
+; -1.209 ; airplane:airpl|Timer:tim|Ticks[5]  ; airplane:airpl|Timer:tim|Ticks[31] ; clockT       ; clockT      ; 1.000        ; -0.055     ; 2.141      ;
+; -1.206 ; airplane:airpl|Timer:tim|Ticks[0]  ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; 0.157      ; 2.350      ;
+; -1.200 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[31] ; clockT       ; clockT      ; 1.000        ; -0.055     ; 2.132      ;
+; -1.190 ; airplane:airpl|Timer:tim|Ticks[0]  ; airplane:airpl|Timer:tim|Ticks[31] ; clockT       ; clockT      ; 1.000        ; 0.157      ; 2.334      ;
+; -1.184 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.134      ;
+; -1.180 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.130      ;
+; -1.177 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.127      ;
+; -1.176 ; airplane:airpl|Timer:tim|Ticks[6]  ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; -0.055     ; 2.108      ;
+; -1.173 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.123      ;
+; -1.172 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.921      ;
+; -1.172 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.921      ;
+; -1.172 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.921      ;
+; -1.172 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.921      ;
+; -1.172 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.921      ;
+; -1.172 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.921      ;
+; -1.170 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.919      ;
+; -1.170 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.919      ;
+; -1.170 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.919      ;
+; -1.170 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.919      ;
+; -1.170 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.919      ;
+; -1.170 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.919      ;
+; -1.162 ; airplane:airpl|Timer:tim|Ticks[15] ; airplane:airpl|Timer:tim|Ticks[31] ; clockT       ; clockT      ; 1.000        ; -0.044     ; 2.105      ;
+; -1.159 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 1.000        ; -0.240     ; 1.906      ;
+; -1.155 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 1.000        ; -0.240     ; 1.902      ;
+; -1.149 ; airplane:airpl|Timer:tim|Ticks[3]  ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; 0.157      ; 2.293      ;
+; -1.148 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.897      ;
+; -1.148 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.897      ;
+; -1.148 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.897      ;
+; -1.148 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.897      ;
+; -1.148 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.897      ;
+; -1.148 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.897      ;
+; -1.145 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 1.000        ; -0.240     ; 1.892      ;
+; -1.141 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 1.000        ; -0.240     ; 1.888      ;
+; -1.137 ; airplane:airpl|Timer:tim|Ticks[1]  ; airplane:airpl|Timer:tim|Ticks[31] ; clockT       ; clockT      ; 1.000        ; 0.157      ; 2.281      ;
+; -1.134 ; airplane:airpl|Timer:tim|Ticks[6]  ; airplane:airpl|Timer:tim|Ticks[31] ; clockT       ; clockT      ; 1.000        ; -0.055     ; 2.066      ;
+; -1.133 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[0]  ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.882      ;
+; -1.133 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[1]  ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.882      ;
+; -1.133 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[2]  ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.882      ;
+; -1.133 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[3]  ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.882      ;
+; -1.132 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.036     ; 2.083      ;
+; -1.132 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.036     ; 2.083      ;
+; -1.132 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.036     ; 2.083      ;
+; -1.132 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.036     ; 2.083      ;
+; -1.132 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.036     ; 2.083      ;
+; -1.132 ; airplane:airpl|Timer:tim|Ticks[22] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.036     ; 2.083      ;
+; -1.132 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.036     ; 2.083      ;
+; -1.132 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.036     ; 2.083      ;
+; -1.132 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.036     ; 2.083      ;
+; -1.132 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.036     ; 2.083      ;
+; -1.132 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.036     ; 2.083      ;
+; -1.132 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.036     ; 2.083      ;
+; -1.131 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[0]  ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.880      ;
+; -1.131 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[1]  ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.880      ;
+; -1.131 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[2]  ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.880      ;
+; -1.131 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[3]  ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.880      ;
+; -1.130 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[18] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.879      ;
+; -1.130 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[19] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.879      ;
+; -1.130 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[20] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.879      ;
+; -1.130 ; airplane:airpl|Timer:tim|Ticks[14] ; airplane:airpl|Timer:tim|Ticks[21] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.879      ;
+; -1.129 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[0]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.079      ;
+; -1.129 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.079      ;
+; -1.129 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.079      ;
+; -1.129 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.079      ;
+; -1.129 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.079      ;
+; -1.128 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[18] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.877      ;
+; -1.128 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[19] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.877      ;
+; -1.128 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[20] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.877      ;
+; -1.128 ; airplane:airpl|Timer:tim|Ticks[16] ; airplane:airpl|Timer:tim|Ticks[21] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.877      ;
+; -1.127 ; airplane:airpl|Timer:tim|Ticks[5]  ; airplane:airpl|Timer:tim|Ticks[20] ; clockT       ; clockT      ; 1.000        ; -0.249     ; 1.865      ;
+; -1.122 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[0]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.072      ;
+; -1.122 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.072      ;
+; -1.122 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.072      ;
+; -1.122 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.072      ;
+; -1.122 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.072      ;
+; -1.113 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.063      ;
+; -1.109 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.059      ;
+; -1.109 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[0]  ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.858      ;
+; -1.109 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[1]  ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.858      ;
+; -1.109 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[2]  ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.858      ;
+; -1.109 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[3]  ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.858      ;
+; -1.108 ; airplane:airpl|Timer:tim|Ticks[8]  ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; -0.055     ; 2.040      ;
+; -1.108 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.058      ;
+; -1.106 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[18] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.855      ;
+; -1.106 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[19] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.855      ;
+; -1.106 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[20] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.855      ;
+; -1.106 ; airplane:airpl|Timer:tim|Ticks[29] ; airplane:airpl|Timer:tim|Ticks[21] ; clockT       ; clockT      ; 1.000        ; -0.238     ; 1.855      ;
+; -1.105 ; airplane:airpl|Timer:tim|Ticks[7]  ; airplane:airpl|Timer:tim|Ticks[30] ; clockT       ; clockT      ; 1.000        ; 0.157      ; 2.249      ;
+; -1.105 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[22] ; clockT       ; clockT      ; 1.000        ; -0.249     ; 1.843      ;
+; -1.105 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[23] ; clockT       ; clockT      ; 1.000        ; -0.249     ; 1.843      ;
+; -1.105 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[24] ; clockT       ; clockT      ; 1.000        ; -0.249     ; 1.843      ;
+; -1.105 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[25] ; clockT       ; clockT      ; 1.000        ; -0.249     ; 1.843      ;
+; -1.105 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 1.000        ; -0.249     ; 1.843      ;
+; -1.105 ; airplane:airpl|Timer:tim|Ticks[4]  ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 1.000        ; -0.249     ; 1.843      ;
+; -1.104 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 1.000        ; -0.037     ; 2.054      ;
+; -1.104 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[0]        ; clockT       ; clockT      ; 1.000        ; -0.240     ; 1.851      ;
+; -1.104 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 1.000        ; -0.240     ; 1.851      ;
++--------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'clockT'                                                                                                                   ;
++-------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.195 ; airplane:airpl|NextState.park      ; airplane:airpl|PrState.park        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.316      ;
+; 0.200 ; airplane:airpl|NextState.flight    ; airplane:airpl|PrState.flight      ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.321      ;
+; 0.211 ; airplane:airpl|PrState.flight      ; airplane:airpl|A                   ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.332      ;
+; 0.256 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.580      ;
+; 0.265 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[1]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.589      ;
+; 0.265 ; airplane:airpl|A                   ; AA                                 ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.386      ;
+; 0.268 ; airplaneParking:park|cou[6]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.592      ;
+; 0.271 ; airplane:airpl|B                   ; BB                                 ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.392      ;
+; 0.277 ; airplaneParking:park|cou[6]        ; airplaneParking:park|count[6]      ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.398      ;
+; 0.285 ; airplaneParking:park|L             ; airplane:airpl|B                   ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.406      ;
+; 0.287 ; airplaneParking:park|cou[7]        ; airplaneParking:park|count[7]      ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.408      ;
+; 0.288 ; airplaneParking:park|cou[0]        ; airplaneParking:park|count[0]      ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.409      ;
+; 0.289 ; airpotEmerTs                       ; airplaneParking:park|L             ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.410      ;
+; 0.300 ; airplaneParking:park|cou[1]        ; airplaneParking:park|cou[1]        ; clockT       ; clockT      ; 0.000        ; 0.045      ; 0.429      ;
+; 0.309 ; airplaneParking:park|cou[6]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.430      ;
+; 0.309 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.430      ;
+; 0.310 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.431      ;
+; 0.311 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.432      ;
+; 0.319 ; airplaneParking:park|cou[7]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.643      ;
+; 0.321 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[0]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.442      ;
+; 0.326 ; airplane:airpl|PrState.park        ; airplane:airpl|B                   ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.447      ;
+; 0.331 ; airplaneParking:park|cou[6]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.655      ;
+; 0.334 ; airplaneParking:park|entranceA     ; airplane:airpl|A                   ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.455      ;
+; 0.334 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.658      ;
+; 0.334 ; airplaneParking:park|exitB         ; airplane:airpl|B                   ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.455      ;
+; 0.335 ; airplaneParking:park|exitB         ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.456      ;
+; 0.335 ; airplaneParking:park|exitB         ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.456      ;
+; 0.339 ; airpotEmerTs                       ; airplaneParking:park|entranceA     ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.460      ;
+; 0.352 ; airplaneParking:park|cou[3]        ; airplaneParking:park|count[3]      ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.473      ;
+; 0.358 ; airpotEmerTs                       ; airplaneParking:park|exitB         ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.479      ;
+; 0.362 ; airplaneParking:park|cou[9]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.045      ; 0.491      ;
+; 0.363 ; airplaneParking:park|cou[4]        ; airplaneParking:park|count[4]      ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.484      ;
+; 0.365 ; airplaneParking:park|cou[2]        ; airplaneParking:park|count[2]      ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.486      ;
+; 0.365 ; airplane:airpl|Timer:tim|f         ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.486      ;
+; 0.366 ; airplane:airpl|Timer:tim|f         ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.487      ;
+; 0.366 ; airplaneParking:park|cou[5]        ; airplaneParking:park|count[5]      ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.487      ;
+; 0.368 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.045      ; 0.497      ;
+; 0.375 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.496      ;
+; 0.382 ; airplaneParking:park|cou[5]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.503      ;
+; 0.387 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.711      ;
+; 0.393 ; airplaneParking:park|cou[5]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.717      ;
+; 0.393 ; airplaneParking:park|L             ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.514      ;
+; 0.397 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.721      ;
+; 0.402 ; airplane:airpl|Timer:tim|f         ; airplane:airpl|B                   ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.523      ;
+; 0.419 ; airplane:airpl|PrState.park        ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.540      ;
+; 0.420 ; airplane:airpl|PrState.park        ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.541      ;
+; 0.421 ; airplaneParking:park|L             ; airplane:airpl|A                   ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.542      ;
+; 0.424 ; BB                                 ; airplaneParking:park|exitB         ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.545      ;
+; 0.450 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.774      ;
+; 0.452 ; BB                                 ; airplaneParking:park|entranceA     ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.573      ;
+; 0.456 ; airplaneParking:park|cou[5]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.780      ;
+; 0.458 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.579      ;
+; 0.466 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.790      ;
+; 0.466 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.790      ;
+; 0.468 ; airplaneParking:park|cou[6]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.589      ;
+; 0.468 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.589      ;
+; 0.471 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.592      ;
+; 0.471 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[2]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.592      ;
+; 0.475 ; airplaneParking:park|cou[1]        ; airplaneParking:park|count[1]      ; clockT       ; clockT      ; 0.000        ; -0.158     ; 0.401      ;
+; 0.479 ; airplane:airpl|NextState.flight    ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.600      ;
+; 0.482 ; airplane:airpl|NextState.park      ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.603      ;
+; 0.486 ; airplaneParking:park|L             ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.607      ;
+; 0.521 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.642      ;
+; 0.524 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.645      ;
+; 0.527 ; airplaneParking:park|cou[8]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.045      ; 0.656      ;
+; 0.529 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.853      ;
+; 0.529 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.853      ;
+; 0.530 ; airplaneParking:park|cou[5]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.651      ;
+; 0.534 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.655      ;
+; 0.534 ; airplaneParking:park|cou[4]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.655      ;
+; 0.534 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[3]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.655      ;
+; 0.537 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.658      ;
+; 0.537 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[4]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.658      ;
+; 0.539 ; airpotEmerTs                       ; airplaneParking:park|cou[1]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.863      ;
+; 0.539 ; airpotEmerTs                       ; airplaneParking:park|cou[8]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.863      ;
+; 0.539 ; airpotEmerTs                       ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.863      ;
+; 0.547 ; airplane:airpl|Timer:tim|Ticks[11] ; airplane:airpl|Timer:tim|Ticks[12] ; clockT       ; clockT      ; 0.000        ; 0.239      ; 0.870      ;
+; 0.547 ; BB                                 ; airplaneParking:park|cou[9]        ; clockT       ; clockT      ; 0.000        ; 0.240      ; 0.871      ;
+; 0.549 ; airplaneParking:park|cou[8]        ; airplaneParking:park|count[8]      ; clockT       ; clockT      ; 0.000        ; -0.158     ; 0.475      ;
+; 0.550 ; AA                                 ; airplaneParking:park|exitB         ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.671      ;
+; 0.563 ; airplane:airpl|Timer:tim|Ticks[25] ; airplane:airpl|Timer:tim|Ticks[26] ; clockT       ; clockT      ; 0.000        ; 0.238      ; 0.885      ;
+; 0.563 ; airplane:airpl|Timer:tim|Ticks[10] ; airplane:airpl|Timer:tim|Ticks[12] ; clockT       ; clockT      ; 0.000        ; 0.239      ; 0.886      ;
+; 0.573 ; AA                                 ; airplaneParking:park|entranceA     ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.694      ;
+; 0.577 ; airplane:airpl|Timer:tim|Ticks[24] ; airplane:airpl|Timer:tim|Ticks[26] ; clockT       ; clockT      ; 0.000        ; 0.238      ; 0.899      ;
+; 0.587 ; airplaneParking:park|cou[3]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.708      ;
+; 0.588 ; airplane:airpl|Timer:tim|Ticks[11] ; airplane:airpl|Timer:tim|Ticks[11] ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.709      ;
+; 0.588 ; airplane:airpl|Timer:tim|Ticks[17] ; airplane:airpl|Timer:tim|Ticks[17] ; clockT       ; clockT      ; 0.000        ; 0.045      ; 0.717      ;
+; 0.591 ; airplane:airpl|Timer:tim|Ticks[9]  ; airplane:airpl|Timer:tim|Ticks[9]  ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.712      ;
+; 0.591 ; airplane:airpl|PrState.flight      ; airplane:airpl|NextState.flight    ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.712      ;
+; 0.592 ; airplane:airpl|PrState.flight      ; airplane:airpl|NextState.park      ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.713      ;
+; 0.593 ; airplaneParking:park|cou[5]        ; airplaneParking:park|cou[7]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.714      ;
+; 0.593 ; airplane:airpl|Timer:tim|Ticks[26] ; airplane:airpl|Timer:tim|Ticks[26] ; clockT       ; clockT      ; 0.000        ; 0.045      ; 0.722      ;
+; 0.595 ; airplane:airpl|Timer:tim|Ticks[27] ; airplane:airpl|Timer:tim|Ticks[27] ; clockT       ; clockT      ; 0.000        ; 0.036      ; 0.715      ;
+; 0.599 ; airplane:airpl|Timer:tim|Ticks[12] ; airplane:airpl|Timer:tim|Ticks[12] ; clockT       ; clockT      ; 0.000        ; 0.045      ; 0.728      ;
+; 0.600 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.721      ;
+; 0.600 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[5]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.721      ;
+; 0.601 ; airplane:airpl|Timer:tim|Ticks[28] ; airplane:airpl|Timer:tim|Ticks[28] ; clockT       ; clockT      ; 0.000        ; 0.036      ; 0.721      ;
+; 0.602 ; airplane:airpl|Timer:tim|Ticks[10] ; airplane:airpl|Timer:tim|Ticks[10] ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.723      ;
+; 0.603 ; airplaneParking:park|cou[2]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.724      ;
+; 0.603 ; airplaneParking:park|cou[0]        ; airplaneParking:park|cou[6]        ; clockT       ; clockT      ; 0.000        ; 0.037      ; 0.724      ;
++-------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.994   ; 0.195 ; N/A      ; N/A     ; -3.000              ;
+;  clockT          ; -2.994   ; 0.195 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -128.175 ; 0.0   ; 0.0      ; 0.0     ; -73.657             ;
+;  clockT          ; -128.175 ; 0.000 ; N/A      ; N/A     ; -73.657             ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; countT[0]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; countT[1]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; countT[2]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; countT[3]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; countT[4]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; countT[5]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; countT[6]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; countT[7]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; countT[8]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; countT[9]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; countET[0]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; countET[1]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; airpotEmerT   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; airpotEmerT             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clockT                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; resetT                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; fireT                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; weathT                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; countT[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.39 V              ; -0.0265 V           ; 0.2 V                                ; 0.033 V                              ; 2.94e-10 s                  ; 3.12e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.39 V             ; -0.0265 V          ; 0.2 V                               ; 0.033 V                             ; 2.94e-10 s                 ; 3.12e-10 s                 ; Yes                       ; Yes                       ;
+; countT[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.38 V              ; -0.0145 V           ; 0.169 V                              ; 0.026 V                              ; 4.83e-10 s                  ; 4.71e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.38 V             ; -0.0145 V          ; 0.169 V                             ; 0.026 V                             ; 4.83e-10 s                 ; 4.71e-10 s                 ; Yes                       ; Yes                       ;
+; countT[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.39 V              ; -0.0265 V           ; 0.2 V                                ; 0.033 V                              ; 2.94e-10 s                  ; 3.12e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.39 V             ; -0.0265 V          ; 0.2 V                               ; 0.033 V                             ; 2.94e-10 s                 ; 3.12e-10 s                 ; Yes                       ; Yes                       ;
+; countT[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.38 V              ; -0.0145 V           ; 0.169 V                              ; 0.026 V                              ; 4.83e-10 s                  ; 4.71e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.38 V             ; -0.0145 V          ; 0.169 V                             ; 0.026 V                             ; 4.83e-10 s                 ; 4.71e-10 s                 ; Yes                       ; Yes                       ;
+; countT[4]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.39 V              ; -0.0265 V           ; 0.2 V                                ; 0.033 V                              ; 2.94e-10 s                  ; 3.12e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.39 V             ; -0.0265 V          ; 0.2 V                               ; 0.033 V                             ; 2.94e-10 s                 ; 3.12e-10 s                 ; Yes                       ; Yes                       ;
+; countT[5]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; countT[6]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; countT[7]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.33 V              ; -0.00624 V          ; 0.185 V                              ; 0.097 V                              ; 2.82e-09 s                  ; 2.56e-09 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.33 V             ; -0.00624 V         ; 0.185 V                             ; 0.097 V                             ; 2.82e-09 s                 ; 2.56e-09 s                 ; No                        ; Yes                       ;
+; countT[8]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.39 V              ; -0.0265 V           ; 0.2 V                                ; 0.033 V                              ; 2.94e-10 s                  ; 3.12e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.39 V             ; -0.0265 V          ; 0.2 V                               ; 0.033 V                             ; 2.94e-10 s                 ; 3.12e-10 s                 ; Yes                       ; Yes                       ;
+; countT[9]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; countET[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; countET[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; airpotEmerT   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.45e-09 V                   ; 2.38 V              ; -0.0609 V           ; 0.148 V                              ; 0.095 V                              ; 2.82e-10 s                  ; 2.59e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.45e-09 V                  ; 2.38 V             ; -0.0609 V          ; 0.148 V                             ; 0.095 V                             ; 2.82e-10 s                 ; 2.59e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.61e-09 V                   ; 2.38 V              ; -0.00274 V          ; 0.141 V                              ; 0.006 V                              ; 4.7e-10 s                   ; 6.02e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.61e-09 V                  ; 2.38 V             ; -0.00274 V         ; 0.141 V                             ; 0.006 V                             ; 4.7e-10 s                  ; 6.02e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; countT[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.36 V              ; -0.00476 V          ; 0.096 V                              ; 0.013 V                              ; 4.39e-10 s                  ; 4.15e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.36 V             ; -0.00476 V         ; 0.096 V                             ; 0.013 V                             ; 4.39e-10 s                 ; 4.15e-10 s                 ; Yes                       ; Yes                       ;
+; countT[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.35 V              ; -0.00832 V          ; 0.101 V                              ; 0.024 V                              ; 6.39e-10 s                  ; 6e-10 s                     ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.35 V             ; -0.00832 V         ; 0.101 V                             ; 0.024 V                             ; 6.39e-10 s                 ; 6e-10 s                    ; Yes                       ; Yes                       ;
+; countT[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.36 V              ; -0.00476 V          ; 0.096 V                              ; 0.013 V                              ; 4.39e-10 s                  ; 4.15e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.36 V             ; -0.00476 V         ; 0.096 V                             ; 0.013 V                             ; 4.39e-10 s                 ; 4.15e-10 s                 ; Yes                       ; Yes                       ;
+; countT[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.35 V              ; -0.00832 V          ; 0.101 V                              ; 0.024 V                              ; 6.39e-10 s                  ; 6e-10 s                     ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.35 V             ; -0.00832 V         ; 0.101 V                             ; 0.024 V                             ; 6.39e-10 s                 ; 6e-10 s                    ; Yes                       ; Yes                       ;
+; countT[4]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.36 V              ; -0.00476 V          ; 0.096 V                              ; 0.013 V                              ; 4.39e-10 s                  ; 4.15e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.36 V             ; -0.00476 V         ; 0.096 V                             ; 0.013 V                             ; 4.39e-10 s                 ; 4.15e-10 s                 ; Yes                       ; Yes                       ;
+; countT[5]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; countT[6]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; countT[7]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.33 V              ; -0.00349 V          ; 0.163 V                              ; 0.074 V                              ; 3.33e-09 s                  ; 3.14e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.33 V             ; -0.00349 V         ; 0.163 V                             ; 0.074 V                             ; 3.33e-09 s                 ; 3.14e-09 s                 ; Yes                       ; Yes                       ;
+; countT[8]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.36 V              ; -0.00476 V          ; 0.096 V                              ; 0.013 V                              ; 4.39e-10 s                  ; 4.15e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.36 V             ; -0.00476 V         ; 0.096 V                             ; 0.013 V                             ; 4.39e-10 s                 ; 4.15e-10 s                 ; Yes                       ; Yes                       ;
+; countT[9]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; countET[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; countET[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; airpotEmerT   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.74e-07 V                   ; 2.36 V              ; -0.0201 V           ; 0.072 V                              ; 0.033 V                              ; 4.04e-10 s                  ; 3.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.74e-07 V                  ; 2.36 V             ; -0.0201 V          ; 0.072 V                             ; 0.033 V                             ; 4.04e-10 s                 ; 3.29e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 9.45e-07 V                   ; 2.35 V              ; -0.00643 V          ; 0.081 V                              ; 0.031 V                              ; 5.31e-10 s                  ; 7.59e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 9.45e-07 V                  ; 2.35 V             ; -0.00643 V         ; 0.081 V                             ; 0.031 V                             ; 5.31e-10 s                 ; 7.59e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; countT[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.73 V              ; -0.0384 V           ; 0.169 V                              ; 0.089 V                              ; 2.7e-10 s                   ; 2.62e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.73 V             ; -0.0384 V          ; 0.169 V                             ; 0.089 V                             ; 2.7e-10 s                  ; 2.62e-10 s                 ; Yes                       ; Yes                       ;
+; countT[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; countT[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.73 V              ; -0.0384 V           ; 0.169 V                              ; 0.089 V                              ; 2.7e-10 s                   ; 2.62e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.73 V             ; -0.0384 V          ; 0.169 V                             ; 0.089 V                             ; 2.7e-10 s                  ; 2.62e-10 s                 ; Yes                       ; Yes                       ;
+; countT[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; countT[4]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.73 V              ; -0.0384 V           ; 0.169 V                              ; 0.089 V                              ; 2.7e-10 s                   ; 2.62e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.73 V             ; -0.0384 V          ; 0.169 V                             ; 0.089 V                             ; 2.7e-10 s                  ; 2.62e-10 s                 ; Yes                       ; Yes                       ;
+; countT[5]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; countT[6]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; countT[7]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.64 V              ; -0.0117 V           ; 0.202 V                              ; 0.176 V                              ; 2.38e-09 s                  ; 2.22e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.64 V             ; -0.0117 V          ; 0.202 V                             ; 0.176 V                             ; 2.38e-09 s                 ; 2.22e-09 s                 ; No                        ; Yes                       ;
+; countT[8]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.73 V              ; -0.0384 V           ; 0.169 V                              ; 0.089 V                              ; 2.7e-10 s                   ; 2.62e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.73 V             ; -0.0384 V          ; 0.169 V                             ; 0.089 V                             ; 2.7e-10 s                  ; 2.62e-10 s                 ; Yes                       ; Yes                       ;
+; countT[9]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; countET[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; countET[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; airpotEmerT   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clockT     ; clockT   ; 3435     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clockT     ; clockT   ; 3435     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 56    ; 56   ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
+; Unconstrained Output Port Paths ; 11    ; 11   ;
++---------------------------------+-------+------+
+
+
++--------------------------------------+
+; Clock Status Summary                 ;
++--------+--------+------+-------------+
+; Target ; Clock  ; Type ; Status      ;
++--------+--------+------+-------------+
+; clockT ; clockT ; Base ; Constrained ;
++--------+--------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; fireT      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; resetT     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; weathT     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; airpotEmerT ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[7]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[8]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[9]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; fireT      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; resetT     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; weathT     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; airpotEmerT ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[7]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[8]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; countT[9]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Tue Jan 11 21:23:51 2022
+Info: Command: quartus_sta Top -c Top
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '85'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Top.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clockT clockT
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.994
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.994            -128.175 clockT 
+Info (332146): Worst-case hold slack is 0.376
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.376               0.000 clockT 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -69.000 clockT 
+Info (332114): Report Metastability: Found 2 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.536
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.536            -110.553 clockT 
+Info (332146): Worst-case hold slack is 0.335
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.335               0.000 clockT 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -69.000 clockT 
+Info (332114): Report Metastability: Found 2 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.285
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.285             -48.582 clockT 
+Info (332146): Worst-case hold slack is 0.195
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.195               0.000 clockT 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -73.657 clockT 
+Info (332114): Report Metastability: Found 2 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4771 megabytes
+    Info: Processing ended: Tue Jan 11 21:23:52 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
